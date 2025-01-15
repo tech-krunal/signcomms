@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Other existing tags like title, meta, etc. -->
+    <!-- Font Awesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
+    <title>SignComms</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html {
+        scroll-behavior: smooth; /* Enables smooth scrolling */
+        }</style>
+</head>
+<body>
+    <!-- Logo on the left top corner -->
+    <div class="logo">
+        <a href="index.html">
+        <img src="./images/logo2.jpg" alt="SignComms Logo" class="logo-img">
+        </a>
+    </div>
+
+    <!-- Menu bar on the right top corner -->
+    <!-- <div class="menu-icon" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i> 
+    </div> -->
+    <!-- Menu icon for smaller screens -->
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+
+    <div class="navbar" id="navbar">
+        <a href="Sign_language.html" class="menu-btn">Sign Languages</a>
+        <a href="about.html" class="menu-btn">About</a>
+        <a href="team.html" class="menu-btn">Team</a>
+        <a href="signin.html" class="menu-btn">Contact</a>
+        <a href="signin.html" class="log-btn">Login</a>
+        <a href="animatedsignin.html" class="log-btn">AS</a>
+    </div>
+
+
+    <div class="container">
+        <header>
+            <h1 class="glow">SignComms</h1>
+            <p class="subtitle">Real-Time Hand Sign to Text & Speech Converter</p>
+        </header>
+
+        <main>
+            <div class="section">
+                <h2>Welcome to SignComms</h2>
+                <p>Translate hand signs into text and speech effortlessly.</p>
+                <button class="btn" onclick="startRecognition()">Start Recognition</button>
+                <button class="btn" onclick="stopRecognition()">Stop Recognition</button>
+            </div>
+
+            <div class="camera-section" id="camera-section" style="display: none;">
+                <h3>Camera View:</h3>
+                <video id="video" width="840" height="480" autoplay></video>
+            </div>
+
+            <div class="output">
+                <h3>Detected Sign:</h3>
+                <div id="detected-sign" class="result">Awaiting input...</div>
+
+                <!-- Dropdown for language selection -->
+                <div class="translation-section">
+                    <h3>Translated Text:</h3>
+                    <select id="language-selector" onchange="translateText()">
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                        <option value="zh">Chinese</option>
+                        <option value="ru">Russian</option>
+                        <option value="ar">Arabic</option>
+                        <option value="ja">Japanese</option>
+                        <option value="ko">Korean</option>
+                    </select>
+                    </div>
+                <div id="translated-text" class="result">Hello!</div>
+                <!--/div-->
+
+                <h3>Text-to-Speech:</h3>
+                <div id="tts-result" class="result">Click to play translation...</div>
+                <button class="btn" onclick="playSpeech()">Play Speech</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2024 SignComms. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
 
