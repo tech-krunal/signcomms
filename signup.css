@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+*
+/* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+} */
+body {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Navigation bar */
+.navbar {
+  position: fixed;
+  display: flex;
+  top: 40px;
+  right: 40px;
+  width: auto;
+  z-index: 1001;
+  background-color: #22222200;
+  backdrop-filter: blur(30px);
+  box-shadow: 0px 0px 16px 2px #70e67066;
+  border-radius: 30px;
+  padding: 10px 20px;
+  justify-content: space-evenly;
+  gap: 80px;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Menu Icon for smaller screens */
+.menu-icon {
+  display: none;
+  box-shadow: 0 0 7px #ffffff;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  object-position: center;
+  border: 1px solid #ffffff;
+  align-content: center;
+  text-align: center;
+  background-color: #22222200;
+  backdrop-filter: blur(30px);
+  font-size: 28px;
+  color: #fcfffc;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  z-index: 1002;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menu-icon:hover {
+  transform: scale(1.1);
+  border: 1px solid #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+  color: #f8f8f8;
+}
+
+.menu-btn, .log-btn {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 13px;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.menu-btn:hover, .log-btn:hover {
+  text-shadow: 0 0 20px #008000;
+  color: #00ff00;
+}
+
+.log-btn {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid #00ff0066;
+  box-shadow: 0 0 10px #00ff0066;
+}
+
+.log-btn:hover {
+  box-shadow: 0 0 10px #4fe50fdf;
+}
+
+
+
+/* Responsive Design: Media Queries */
+@media screen and (max-width: 990px) {
+  .navbar {
+      transition: transform 0.6s ease;
+      display: none;
+      flex-direction: column;
+      width: 200px;
+      height: 400px;
+      background-color: #22222200;
+      backdrop-filter: blur(30px);
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding-top: 50px;
+      gap: 30px;
+      /* background-color: #0f0f0f; /* Sidebar background */
+  }
+  
+
+  .menu-icon {
+      display: block; /* Show the menu icon on smaller screens */
+      top: 60px;
+      right: 60px;
+  }
+
+  .navbar.active {
+      display: flex;
+      align-content: flex-start;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: end;
+      gap: 5px;
+      top: 40px;
+      right: 40px;
+      transition: all 0.3s ease-in-out;
+  }
+
+  .menu-btn {
+      padding: 20px;
+      text-align: left;
+  }
+  .log-btn {
+      padding: 20px;
+      height: 20px;
+      width: 60px;
+      border-radius: 100%;
+      text-align: center;
+      place-self: center;
+      margin-top: 10px;
+  }
+  .logo {
+      position: relative;
+      top: 30px;
+      left: 50px;
+      z-index: 1002;
+  }
+}
+
+
+section 
+{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+section::before 
+{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#000,#0f0,#000);
+  animation: animate 5s linear infinite;
+}
+@keyframes animate 
+{
+  0%
+  {
+    transform: translateY(-100%);
+  }
+  100%
+  {
+    transform: translateY(100%);
+  }
+}
+section span 
+{
+  position: relative;
+  display: block;
+  width: calc(6.25vw - 2px);
+  height: calc(6.25vw + 15px);
+  background: #181818;
+  z-index: 2;
+  transition: 1.5s;
+}
+section span:hover 
+{
+  background: #0f0;
+  transition: 0s;
+}
+
+
+/* Logo */
+.logo {
+  position: fixed;
+  top: 30px;
+  left: 50px;
+  z-index: 1001;
+}
+
+.logo-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ffffffbd;
+  box-shadow: 0 0 30px #ffffff85;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.logo-img:hover {
+  /* transform: scale(1.1); */
+  border: 5px solid #00ff00;
+  box-shadow: 0 0 30px #00ff00;
+}
+
+section .signup
+{
+  position: absolute;
+  width: 400px;
+  background: #222;  
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+section .signup .content 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+section .signup .content h2 
+{
+  font-size: 2em;
+  color: #0f0;
+  text-transform: uppercase;
+}
+section .signup .content .form 
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+section .signup .content .form .inputBox
+{
+  position: relative;
+  width: 100%;
+}
+section .signup .content .form .inputBox input 
+{
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+section .signup .content .form .inputBox i 
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 15px 10px;
+  font-style: normal;
+  color: #aaa;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.signup .content .form .inputBox input:focus ~ i,
+.signup .content .form .inputBox input:valid ~ i
+{
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+  color: #fff;
+}
+.signup .content .form .links 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.signup .content .form .links a 
+{
+  text-decoration: none;
+  color: #aaaaaa;
+}
+.signup .content .form .inputBox input[type="submit"]
+{
+  padding: 10px;
+  background: #0f0;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.35em;
+  padding: 10px;
+  cursor: pointer;
+}
+.signup .content .form .inputBox input[type="submit"]:active
+{
+  /* background: #0a0; */
+  opacity: 0.6;
+}
+@media (max-width: 900px)
+{
+  section span 
+  {
+    width: calc(10vw - 2px);
+    height: calc(10vw - 2px);
+  }
+}
+@media (max-width: 600px)
+{
+  section span 
+  {
+    width: calc(20vw - 2px);
+    height: calc(20vw - 2px);
+  }
+}
